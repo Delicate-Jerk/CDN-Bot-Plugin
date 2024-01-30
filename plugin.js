@@ -730,7 +730,7 @@ document
         const data = await response.json();
 
         // Check if the status is 204
-        if (data?.status === 204) {
+        if (data.data?.status === 204) {
           addMessage("Sorry did not get you", false);
           addMessage("please share your query below", false);
 
