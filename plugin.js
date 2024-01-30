@@ -208,7 +208,7 @@ chatHeader.textContent = "Antier Chatbot";
 chatHeader.style.color = "white";
 //Close Image Goes here//
 const miniMize = document.createElement("img");
-miniMize.src = "https://stage-chatbot-frontend.s3.us-west-2.amazonaws.com/images/minimize.png"; ////arshit-- will change image////
+miniMize.src = "https://stage-chatbot-frontend.s3.us-west-2.amazonaws.com/images/minimize.png"; 
 miniMize.alt = "Mini-mize";
 miniMize.style.width = "19px";
 miniMize.style.height = "19px";
