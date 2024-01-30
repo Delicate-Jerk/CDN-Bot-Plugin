@@ -16,129 +16,154 @@ document.body.appendChild(styleElement);
 const styleSheet = styleElement.sheet;
 
 styleSheet.insertRule(`
-    @keyframes popIn {
-        0% {
-            transform: scale(0);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-`);
-
-styleSheet.insertRule(`
-        .message-timestamp {
-            font-size: 12px;
-            color: #777;
-            text-align: center;
-            margin-bottom: 0px;
-            padding: 0px;
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     `);
 
 styleSheet.insertRule(`
-.user-message {
-    font-size: 13px;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    word-break: break-all;
-    width: -webkit-fit-content;
-    animation: popIn 0.3s linear 0.3s 1 normal both running;
-}
-`);
+            .message-timestamp {
+                font-size: 12px;
+                color: #777;
+                text-align: center;
+                margin-bottom: 0px;
+                padding: 0px;
+            }
+        `);
 
 styleSheet.insertRule(`
-        .message-container {
-            padding:20px;
-            gap: 23px;
-        }
-    `);
-
-styleSheet.insertRule(`
-.bot-message {
-    font-size: 13px;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    word-break: break-all;
-    width: -webkit-fit-content;
-    animation: popIn 0.5s linear 0.5s 1 normal both running;
-}
-`);
-
-styleSheet.insertRule(`
-    .user-message, .bot-message {
-        font-size: 13px; 
-        margin-left:0px !important;
-        margin-right:0px !important;
+    .user-message {
+        font-size: 13px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
         word-break: break-all;
         width: -webkit-fit-content;
-        animation: 0.5s linear 0.3s 1 normal both running;
+        animation: popIn 0.3s linear 0.3s 1 normal both running;
     }
-
-    `);
+`);
 
 styleSheet.insertRule(`
-    .bot-message .message-timestamp {
-        position: relative;
-        top: -18px; 
-        display: block;
-        margin-bottom: 5px; 
-        text-align: right; 
-        height: fit-content;
+            .message-container {
+                padding:20px;
+                gap: 23px;
+            }
+        `);
+
+styleSheet.insertRule(`
+    .bot-message {
+        font-size: 13px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        word-break: break-all;
+        width: -webkit-fit-content;
+        animation: popIn 0.5s linear 0.5s 1 normal both running;
     }
-    `);
+`);
 
 styleSheet.insertRule(`
-        .bot-message-logo {
-            position: absolute;
-            bottom: -50px; 
-            left: -30px; 
-            padding: 30px;
+        .user-message, .bot-message {
+            font-size: 13px; 
+            margin-left:0px !important;
+            margin-right:0px !important;
+            word-break: break-all;
+            width: -webkit-fit-content;
+            animation: 0.5s linear 0.3s 1 normal both running;
         }
-    `);
+
+        `);
 
 styleSheet.insertRule(`
-        .bot-message {ƒ
-            margin-bottom: 25px; 
-            
+        .bot-message .message-timestamp {
+            position: relative;
+            top: -18px; 
+            display: block;
+            margin-bottom: 5px; 
+            text-align: right; 
+            height: fit-content;
         }
-    `);
+        `);
 
 styleSheet.insertRule(`
-        .chat-header {
-            // border-radius: 10px 10px 0px 0px;
-            background: linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%);
-            box-shadow: 0px 8.255px 20.636px 0px rgba(57, 79, 182, 0.30);
-            color: white;
-            min-height: 54px;
-            display: flex;
-            align-items: center;
-            padding: 10px 13px !important;
-            // border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-    `);
+            .bot-message-logo {
+                position: absolute;
+                bottom: -50px; 
+                left: -30px; 
+                padding: 30px;
+            }
+        `);
+
 styleSheet.insertRule(`
-       input,textarea {
-            width: calc(100% - 41px) !important;
-        }
-    `);
+            .bot-message {ƒ
+                margin-bottom: 25px; 
+                
+            }
+        `);
+
 styleSheet.insertRule(`
-       form {
-            padding: 0 18px 17px 14px;
-            padding-bottom: 17px;
-        }
-    `);
+            .chat-header {
+                // border-radius: 10px 10px 0px 0px;
+                background: linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%);
+                box-shadow: 0px 8.255px 20.636px 0px rgba(57, 79, 182, 0.30);
+                color: white;
+                min-height: 54px;
+                display: flex;
+                align-items: center;
+                padding: 10px 13px !important;
+                // border-bottom: 1px solid #ccc;
+                padding-bottom: 5px;
+            }
+        `);
 styleSheet.insertRule(`
-        .message-container::-webkit-scrollbar {
-            width: 0;
-          }
-    `);
+           input,textarea {
+                width: calc(100% - 41px) !important;
+            }
+        `);
+styleSheet.insertRule(`
+           form {
+                padding: 0 18px 17px 14px;
+                padding-bottom: 17px;
+            }
+        `);
+styleSheet.insertRule(`
+            .message-container::-webkit-scrollbar {
+                width: 0;
+              }
+        `);
+
+// Function to dynamically create and append meta tags
+function addMetaTags() {
+  var metaCacheControl = document.createElement('meta');
+  metaCacheControl.setAttribute('http-equiv', 'cache-control');
+  metaCacheControl.setAttribute('content', 'no-cache');
+
+  var metaPragma = document.createElement('meta');
+  metaPragma.setAttribute('http-equiv', 'Pragma');
+  metaPragma.setAttribute('content', 'no-cache');
+
+  var metaExpires = document.createElement('meta');
+  metaExpires.setAttribute('http-equiv', 'Expires');
+  metaExpires.setAttribute('content', '-1');
+
+  // Append meta tags to the head section of the document
+  document.head.appendChild(metaCacheControl);
+  document.head.appendChild(metaPragma);
+  document.head.appendChild(metaExpires);
+}
+
+// Call the function to add meta tags when the page loads
+window.onload = function () {
+  addMetaTags();
+};
 
 // const backgroundImageUrl="./images/mainBg.png"
-const backgroundImageUrl = "https://i.ibb.co/NsvZq3w/mainBg.png"
+const backgroundImageUrl = "https://i.ibb.co/NsvZq3w/mainBg.png";
 // Create the chat container div
 const chatContainer = document.createElement("div");
 chatContainer.className = "chat-container";
@@ -160,8 +185,6 @@ chatContainer.style.backgroundPosition = "center";
 chatContainer.style.backgroundRepeat = "no-repeat";
 chatContainer.style.backgroundSize = "cover";
 
-
-
 // Create the chat header
 const chatHeader = document.createElement("div");
 chatHeader.className = "chat-header";
@@ -174,7 +197,7 @@ chatHeader.style.position = "relative";
 
 // Create the logo image
 const logoImg = document.createElement("img");
-logoImg.src = "https://i.ibb.co/jfmW7GB/Wave-Hand-Icon.png"
+logoImg.src = "https://i.ibb.co/jfmW7GB/Wave-Hand-Icon.png";
 logoImg.alt = "Antier Bot Logo";
 logoImg.style.width = "33px";
 logoImg.style.height = "34px";
@@ -183,10 +206,21 @@ logoImg.style.marginRight = "9px";
 // Set the text content of the chat header
 chatHeader.textContent = "Antier Chatbot";
 chatHeader.style.color = "white";
+//Close Image Goes here//
+const miniMize = document.createElement("img");
+miniMize.src = "https://stage-chatbot-frontend.s3.us-west-2.amazonaws.com/images/minimize.png"; ////arshit-- will change image////
+miniMize.alt = "Mini-mize";
+miniMize.style.width = "19px";
+miniMize.style.height = "19px";
+miniMize.style.position = "absolute";
+miniMize.style.right = "38px";
+miniMize.style.top = "50%";
+miniMize.style.transform = "translateY(-50%)";
+miniMize.style.cursor = "pointer";
 
 //Close Image Goes here//
 const closeImg = document.createElement("img");
-closeImg.src = "https://i.ibb.co/wBYLLP6/Close-Icon.png"
+closeImg.src = "https://i.ibb.co/wBYLLP6/Close-Icon.png";
 closeImg.alt = "close";
 closeImg.style.width = "19px";
 closeImg.style.height = "19px";
@@ -196,12 +230,12 @@ closeImg.style.top = "50%";
 closeImg.style.transform = "translateY(-50%)";
 closeImg.style.cursor = "pointer";
 
-
 // Append the logo and chat header to the chatContainer
 chatHeader.insertBefore(logoImg, chatHeader.firstChild);
+chatHeader.insertBefore(miniMize, chatHeader.firstChild);
 chatHeader.insertBefore(closeImg, chatHeader.firstChild);
 chatContainer.appendChild(chatHeader);
-closeImg.addEventListener("click", function () {
+miniMize.addEventListener("click", function () {
   toggleChatWindow();
 });
 
@@ -222,14 +256,143 @@ messageContainer.style.scrollbarColor = "transparent transparent"; // For Firefo
 // var messageBody = messageContainer.id;
 // messageContainer.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest"})
 
+//MY
+
+const staticText = document.createElement("div");
+const staticMessageContent = document.createElement("div");
+staticMessageContent.textContent = "Hello Welcome to Ant bot";
+staticText.appendChild(staticMessageContent);
+staticText.style.padding = "10px 12px";
+staticText.style.position = "relative";
+staticText.style.alignSelf = "flex-start";
+staticText.style.backgroundColor = "#E2DEDE";
+staticText.style.color = "#000";
+staticText.style.borderRadius = "12px";
+staticText.style.borderBottomLeftRadius = "0px";
+staticText.style.marginLeft = "10px";
+staticText.style.fontSize = "14px";
+
+messageContainer.appendChild(staticText);
+
+var bubbleContainer = document.createElement("div");
+bubbleContainer.style.display = "flex";
+bubbleContainer.style.flexFlow = "wrap";
+bubbleContainer.style.gap = "10px";
+
+var numberOfTimes = 6;
+var names = ["Raise a Query", "How to become a Validator", "Security at Shido", "Shido Bridge", "Shido Coins"];
+
+function updateMessageContainer(content) {
+  const clickedElement = document.createElement("div");
+  clickedElement.textContent = content;
+  clickedElement.style.padding = "10px 12px";
+  clickedElement.style.position = "relative";
+  clickedElement.style.alignSelf = "flex-start";
+  clickedElement.style.backgroundColor = "#E2DEDE";
+  clickedElement.style.color = "#000";
+  clickedElement.style.borderRadius = "12px";
+  clickedElement.style.fontSize = "14px";
+  clickedElement.style.cursor = "pointer";
+  clickedElement.style.transition = "background-color 0.3s";
+}
+
+for (var i = 0; i < numberOfTimes && i < names.length; i++) {
+  const bubbleMessage = document.createElement("div");
+  bubbleMessage.textContent = names[i];
+  bubbleMessage.style.padding = "10px 12px";
+  bubbleMessage.style.position = "relative";
+  bubbleMessage.style.alignSelf = "flex-start";
+  bubbleMessage.style.backgroundColor = "#E2DEDE";
+  bubbleMessage.style.color = "#000";
+  bubbleMessage.style.borderRadius = "12px";
+  bubbleMessage.style.fontSize = "14px";
+  bubbleMessage.style.cursor = "pointer";
+  bubbleMessage.style.transition = "background-color 0.3s";
+
+  bubbleMessage.addEventListener("click", async function () {
+    if (this.textContent === "Raise a Query") {
+      addInputFields();
+    } else {
+      addMessage(this.textContent, true);
+      try {
+        const response = await fetch(
+          "https://chat-service.antiers.world/chatBot/ask/service",
+
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "cache-control": "no-cache",
+              pragma: "no-cache",
+            },
+            body: JSON.stringify({
+              question: this.textContent,
+              // "username": "shido",
+              // "domain": "blockchain",
+              // "enterprise": "company",
+              // "folder_name": "shido",
+              // "target_language": "english"
+              assistant_id: "asst_blyftiXHtKfpDMHQ24txuoGh",
+              instructions:
+                "You are a chat assistant for Shido which is a Blockchain company, and your dataset would be the file uploaded, provide me with answers as quickly as possible and in english language, and only answer questions related to shido or blockchain and not answer anything else other than these",
+            }),
+          }
+        );
+
+        if (response?.ok) {
+          const data = await response.json();
+
+          // Check if the status is 204
+          if (data?.status === 204) {
+            addMessage("Sorry did not get you", false);
+            addMessage("please share your query below", false);
+
+            // Display two user input fields and a send button
+            addInputFields();
+            updateMessageContainer();
+
+            // addMessage("Thank you for your inquiry. We will get back to you within 24 hours.", false);
+          } else {
+            // Display the answer
+            const answer =
+              (data && data?.data?.text_response) ||
+              "I'm sorry, I couldn't find an answer.";
+            addMessage(answer, false);
+            updateMessageContainer();
+          }
+        } else {
+          addMessage(
+            "An error occurred while fetching the answer1.",
+            false
+          );
+          updateMessageContainer();
+        }
+      } catch (error) {
+        addMessage("An error occurred while fetching the answer.", false);
+        updateMessageContainer();
+      }
+    }
+    names.splice(1);
+    numberOfTimes = 1;
+    bubbleContainer.innerHTML = `<div style="padding: 10px 12px; position: relative; align-self: flex-start; background-color: rgb(226, 222, 222); color: rgb(0, 0, 0); border-radius: 12px; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease 0s;">Raise a Query</div>`;
+    updateMessageContainer(names[i]);
+
+    // Call the updateMessageContainer function with the clicked content
+  });
+
+  bubbleContainer.appendChild(bubbleMessage);
+  messageContainer.appendChild(bubbleContainer);
+}
+
 // Assuming you have a function to update the content of messageContainer
 function updateMessageContainer() {
   messageContainer.scrollTop = messageContainer.scrollHeight;
 }
+
+///updatedMessageContainer
+
 // Initial scroll to bottom
 messageContainer.scrollTop = messageContainer.scrollHeight;
-
-
 
 // Create the input form
 const questionForm = document.createElement("form");
@@ -241,7 +404,6 @@ const inputContainer = document.createElement("div");
 inputContainer.style.position = "relative";
 inputContainer.style.display = "flex";
 inputContainer.style.alignItems = "center";
-
 
 const attachmentIcon = document.createElement("div");
 attachmentIcon.innerHTML = "&#128206;";
@@ -260,7 +422,7 @@ attachmentIcon.addEventListener("click", function () {
 const chatInput = document.createElement("input");
 chatInput.type = "text";
 chatInput.id = "chatInput";
-chatInput.autocomplete = "off"
+chatInput.autocomplete = "off";
 chatInput.name = "question";
 chatInput.placeholder = "Aa";
 chatInput.style.flex = "1";
@@ -274,13 +436,8 @@ chatInput.style.background = "rgba(255, 255, 255, 0.10";
 chatInput.style.marginRight = "0";
 chatInput.style.width = "100%";
 
-
 const sendButton = document.createElement("button");
 const sendButtonImg = document.createElement("img");
-// sendButton.id = "sendButton";
-// sendButton.style.position = "absolute";
-// sendButton.style.right = "5px";
-// sendButton.style.top = "5px";
 sendButton.style.width = "25px";
 sendButton.style.height = "25px";
 sendButton.style.background = "transparent";
@@ -291,19 +448,11 @@ sendButton.style.alignItems = "center";
 sendButton.style.justifyContent = "center";
 sendButton.style.marginLeft = "8px";
 
-
-
-
-// sendButton.style.border = "2px";
 sendButton.style.cursor = "pointer";
-// sendButton.innerHTML = "&#10148;"; // Unicode right arrow character
 sendButtonImg.alt = "sendImg";
-sendButtonImg.src = "https://i.ibb.co/BN6M6hb/Frame.png"
-sendButton.appendChild(sendButtonImg)
+sendButtonImg.src = "https://i.ibb.co/BN6M6hb/Frame.png";
+sendButton.appendChild(sendButtonImg);
 
-
-
-// inputContainer.appendChild(attachmentIcon);
 inputContainer.appendChild(chatInput);
 inputContainer.appendChild(sendButton);
 
@@ -330,15 +479,14 @@ chatButtonContainer.style.gap = "4px";
 const chatTextButton = document.createElement("button");
 chatTextButton.id = "chatTextButton";
 chatTextButton.style.display = "block";
-chatTextButton.style.background = "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
+chatTextButton.style.background =
+  "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
 chatTextButton.style.color = "white";
-//   chatTextButton.style.width = "70px";
-//   chatTextButton.style.height = "70px";
+
 chatTextButton.style.border = "none";
 chatTextButton.style.cursor = "pointer";
 chatTextButton.style.borderRadius = "10px";
 chatTextButton.style.position = "relative";
-//   chatTextButton.style.border = "1px solid rgba(255, 255, 255, 0.20)";
 chatTextButton.style.boxShadow = "0px 0px 12px 0px #4680CF";
 chatTextButton.style.fontSize = "14px";
 chatTextButton.style.fontWeight = "700";
@@ -349,7 +497,8 @@ chatTextButton.textContent = "Chat with Us";
 const openChatBtn = document.createElement("button");
 openChatBtn.id = "openChatBtn";
 openChatBtn.style.display = "block";
-openChatBtn.style.background = "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
+openChatBtn.style.background =
+  "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
 openChatBtn.style.color = "white";
 openChatBtn.style.width = "70px";
 openChatBtn.style.height = "70px";
@@ -357,11 +506,7 @@ openChatBtn.style.border = "none";
 openChatBtn.style.cursor = "pointer";
 openChatBtn.style.borderRadius = "70%";
 openChatBtn.style.position = "relative";
-//   openChatBtn.style.border = "1px solid rgba(255, 255, 255, 0.20)";
 openChatBtn.style.boxShadow = "0px 0px 12px 0px #4680CF";
-//   openChatBtn.style.position = "fixed";
-//   openChatBtn.style.bottom = "20px";
-//   openChatBtn.style.right = "20px";
 
 const span = document.createElement("span");
 span.style.position = "absolute";
@@ -370,15 +515,14 @@ span.style.left = "50%";
 span.style.transform = "translate(-50%, -50%)";
 span.style.display = "flex";
 span.style.alignItems = "center";
-//   span.style.fontSize = "25px";
-//   span.textContent = "💬";
-const chatIcon = document.createElement("img")
+
+const chatIcon = document.createElement("img");
 chatIcon.src = "https://i.ibb.co/LtxHFnC/ChatIcon.png";
 chatIcon.alt = "Alternative text for the image";
 chatIcon.width = 25; // Set the width as needed
 
-chatButtonContainer.appendChild(chatTextButton)
-chatButtonContainer.appendChild(openChatBtn)
+chatButtonContainer.appendChild(chatTextButton);
+chatButtonContainer.appendChild(openChatBtn);
 openChatBtn.appendChild(span);
 span.appendChild(chatIcon);
 
@@ -402,7 +546,9 @@ function toggleChatWindow() {
   chatOpen = !chatOpen;
   chatContainer.style.height = chatOpen ? "480px" : "0";
   // span.textContent = chatOpen ? "🤖" : "💬";
-  chatIcon.src = chatOpen ? "https://i.ibb.co/0JmMFBL/BotIcon.png" : "https://i.ibb.co/LtxHFnC/ChatIcon.png";
+  chatIcon.src = chatOpen
+    ? "https://i.ibb.co/0JmMFBL/BotIcon.png"
+    : "https://i.ibb.co/LtxHFnC/ChatIcon.png";
 }
 
 function addMessage(content, isUser) {
@@ -421,7 +567,8 @@ function addMessage(content, isUser) {
   if (isUser) {
     message.style.alignSelf = "flex-end";
     // message.style.backgroundColor = "rgba(23, 73, 77)";
-    message.style.background = 'linear-gradient(280.3deg, #61CDF9 -15.99%, #3147AF 100.2%)';
+    message.style.background =
+      "linear-gradient(280.3deg, #61CDF9 -15.99%, #3147AF 100.2%)";
     message.style.color = "#fff";
     message.style.borderRadius = "12px";
     message.style.borderBottomRightRadius = "0px";
@@ -441,7 +588,7 @@ function addMessage(content, isUser) {
     if (!isUser) {
       // Create the logo for bot messages
       const logoImg = document.createElement("img");
-      // logoImg.src = "./images/LogoAntier.png"; 
+      // logoImg.src = "./images/LogoAntier.png";
       logoImg.src = "https://i.ibb.co/CMBfGh9/Logo-Antier.png";
       logoImg.alt = "Bot Logo";
       logoImg.style.width = "14px";
@@ -473,38 +620,6 @@ function addMessage(content, isUser) {
   updateMessageContainer();
 }
 
-// async function fetchHeaderData() {
-//   try {
-//     const response = await fetch("http://127.0.0.1:6100/get_data");
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch header data");
-//     }
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error fetching header data:", error);
-//     return null;
-//   }
-// }
-
-// Function to update the chat header
-// async function updateChatHeader() {
-//   const data = await fetchHeaderData();
-//   if (data) {
-//     const chatHeader = document.querySelector(".chat-header");
-//     if (data.new_header) {
-//       chatHeader.textContent = data.new_header;
-//     }
-//     if (data.logo) {
-//       logoImg.src = data.logo;
-//     }
-//   }
-// }
-
-// Call the function to update the chat header
-// updateChatHeader();
-
-// Function to get the current time as a string
 function getCurrentTime() {
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, "0");
@@ -517,23 +632,26 @@ openChatBtn.addEventListener("click", function () {
 });
 
 // Fetch default bot messages and suggestions
-// async function fetchDefaultBotMessages() {
-//   try {
-//     const response = await fetch("http://127.0.0.1:6100/get_data");
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch default bot messages");
-//     }
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error fetching default bot messages:", error);
-//     return null;
-//   }
-// }
+async function fetchDefaultBotMessages() {
+  chatButtonContainer.appendChild(chatTextButton);
+
+  //   try {
+  //     const response = await fetch("http://127.0.0.1:6100/get_data");
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch default bot messages");
+  //     }
+  //     const data = await response.json();
+  //     return data;
+  //   } catch (error) {
+  //     console.error("Error fetching default bot messages:", error);
+  //     return null;
+  //   }
+}
 
 // Function to add default bot messages and suggestions
 // async function addDefaultBotMessages() {
-//   const data = await fetchDefaultBotMessages();
+
+// const data = await fetchDefaultBotMessages();
 //   if (data && data.default_bot_messages) {
 //     data.default_bot_messages.forEach((message) => {
 //       addMessage(message, false);
@@ -565,26 +683,8 @@ function addSuggestion(suggestion) {
   bubble.textContent = suggestion;
 
   suggestionElement.appendChild(bubble);
-
   messageContainer.appendChild(suggestionElement);
 }
-
-// async function fetchModelData() {
-//   try {
-//     const response = await fetch("http://127.0.0.1:6100/get_data"); // Replace with the correct file path
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch model data");
-//     }
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error fetching model data:", error);
-//     return null;
-//   }
-// }
-
-// Modify the event listener for the send button (arrow)
-
 
 document
   .getElementById("questionForm")
@@ -594,14 +694,13 @@ document
     const url = new URL(currentUrl);
 
     const queryParams = url.searchParams;
-    const token = queryParams.get('token');
-    const lang = queryParams.get('lang');
+    const token = queryParams.get("token");
+    const lang = queryParams.get("lang");
     event.preventDefault();
     const chatInput = document.getElementById("chatInput");
     const question = chatInput.value;
     chatInput.value = "";
     addMessage(question, true);
-    console.log(question, "question");
     try {
       const response = await fetch(
         "https://chat-service.antiers.world/chatBot/ask/service",
@@ -610,32 +709,30 @@ document
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            'cache-control': 'no-cache',
-            'pragma': 'no-cache',
-            "x-auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbmdhcmluZ2FAZ21haWwuY29tIiwiZG9tYWluIjoicmluZ2FyaW5nYSIsImlhdCI6MTcwMzc2MDA3OCwiZXhwIjoxNzAzODQ2NDc4fQ.17ciqIQgdpepeUlNjuY2pyAKEU3whr8n9PojNfYz5c4",
+            "cache-control": "no-cache",
+            pragma: "no-cache",
           },
           body: JSON.stringify({
-            "question": question,
-            "username": "shido",
-            "domain": "blockchain",
-            "enterprise": "company",
-            "folder_name": "shido",
-            "target_language": "english"
+            question: question,
+            // "username": "shido",
+            // "domain": "blockchain",
+            // "enterprise": "company",
+            // "folder_name": "shido",
+            // "target_language": "english"
+            assistant_id: "asst_blyftiXHtKfpDMHQ24txuoGh",
+            instructions:
+              "You are a chat assistant for Shido which is a Blockchain company, and your dataset would be the file uploaded, provide me with answers as quickly as possible and in english language, and only answer questions related to shido or blockchain and not answer anything else other than these",
           }),
         }
       );
 
-
-
       if (response?.ok) {
         const data = await response.json();
-        console.log(data, "dataaaaaa", data?.data?.status)
-        // Check if the status is 204
-        if (data?.data?.status === 204) {
-          console.log('one');
-          addMessage('Sorry did not get you', false)
-          addMessage('please share your query below', false)
 
+        // Check if the status is 204
+        if (data?.status === 204) {
+          addMessage("Sorry did not get you", false);
+          addMessage("please share your query below", false);
 
           // Display two user input fields and a send button
           addInputFields();
@@ -643,26 +740,24 @@ document
 
           // addMessage("Thank you for your inquiry. We will get back to you within 24 hours.", false);
         } else {
-          console.log('two');
           // Display the answer
           const answer =
-            data.answer ||
-            (data.data && data.data.translated_answer) ||
+            (data && data?.data?.text_response) ||
             "I'm sorry, I couldn't find an answer.";
           addMessage(answer, false);
           updateMessageContainer();
         }
       } else {
-        console.error("Failed to fetch the answer from the API");
-        addMessage("An error occurred while fetching the answer.", false);
+        addMessage(
+          "An error occurred while fetching the answer1.",
+          false
+        );
         updateMessageContainer();
       }
     } catch (error) {
-      console.error("Error:", error);
-      addMessage("An error occurred while fetching the answer.", false);
+      addMessage("An error occurred while fetching the answer2.", false);
       updateMessageContainer();
     }
-
   });
 function addEndChatButton() {
   const endButtonAfter = document.createElement("button");
@@ -671,7 +766,8 @@ function addEndChatButton() {
   endButtonAfter.style.borderRadius = "9px";
   endButtonAfter.style.border = "1px solid rgba(213, 65, 69, 0.70)";
   endButtonAfter.style.background = "rgba(213, 65, 69, 0.15)";
-  endButtonAfter.style.boxShadow = "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
+  endButtonAfter.style.boxShadow =
+    "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
   endButtonAfter.style.color = "#fff";
   endButtonAfter.style.fontSize = "14px";
   endButtonAfter.style.fontWeight = "700";
@@ -687,15 +783,15 @@ function addEndChatButton() {
     //   "Please share your feedback with us.",
     //   false
     // );
-    smileFun()
+
+    smileFun();
     updateMessageContainer();
   });
   const afterButtonsContainer = document.createElement("div");
   afterButtonsContainer.style.display = "flex";
   afterButtonsContainer.style.alignItems = "center";
 
-
-  afterButtonsContainer.appendChild(endButtonAfter)
+  afterButtonsContainer.appendChild(endButtonAfter);
   function reactionContainersOuterFun() {
     messageContainer.appendChild(afterButtonsContainer);
   }
@@ -723,8 +819,6 @@ function addInputFields() {
     inputField1.style.border = "1px solid rgba(255, 255, 255, 0.10)";
   });
 
-
-
   const inputField2 = document.createElement("textarea");
   inputField2.type = "text";
   inputField2.placeholder = "Enter Your Query:";
@@ -747,8 +841,6 @@ function addInputFields() {
     inputField2.style.border = "1px solid rgba(255, 255, 255, 0.10)";
   });
 
-
-
   //Reaction Containers//
   const reactionContainersOuter = document.createElement("div");
   reactionContainersOuter.style.display = "flex";
@@ -766,7 +858,8 @@ function addInputFields() {
   reactionIcons.style.borderRadius = "23px";
   reactionIcons.style.border = "0.5px solid #3654B6";
   reactionIcons.style.background = "#26232B";
-  reactionIcons.style.boxShadow = "0px 8.255px 20.636px 0px rgba(57, 79, 182, 0.30)";
+  reactionIcons.style.boxShadow =
+    "0px 8.255px 20.636px 0px rgba(57, 79, 182, 0.30)";
   reactionIcons.style.color = "#fff";
   reactionIcons.style.fontSize = "14px";
   reactionIcons.style.fontWeight = "700";
@@ -778,10 +871,10 @@ function addInputFields() {
 
   const reactionIconsImg = document.createElement("img");
   // reactionIconsImg.src = "./images/EmojiSad.png"
-  reactionIconsImg.src = "https://i.ibb.co/Z6NRwbB/EmojiSad.png"
+  reactionIconsImg.src = "https://i.ibb.co/Z6NRwbB/EmojiSad.png";
   reactionIconsImg.style.width = "24px";
   reactionIconsImg.style.height = "24px";
-  reactionIcons.appendChild(reactionIconsImg)
+  reactionIcons.appendChild(reactionIconsImg);
 
   const reactionAltText = document.createElement("span");
   reactionAltText.textContent = "smile"; // Change the text content if needed
@@ -790,16 +883,76 @@ function addInputFields() {
   reactionAltText.style.fontSize = "14px";
   reactionAltText.style.fontWeight = "400";
 
-
   reactionContainersOuter.appendChild(reactionContainers);
   reactionContainers.appendChild(reactionIcons);
   reactionContainers.appendChild(reactionAltText);
 
-
   function smileFun() {
     messageContainer.appendChild(reactionContainersOuter);
+    messageContainer.appendChild(inputField3);
+    messageContainer.appendChild(inputField4);
+    messageContainer.appendChild(submitbtn);
   }
 
+  const submitbtn = document.createElement("button");
+  submitbtn.textContent = "Submit";
+  submitbtn.style.padding = "12px 13px";
+  submitbtn.style.borderRadius = "9px 9px 9px 0px";
+  submitbtn.style.border = "0";
+  submitbtn.style.background =
+    "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
+  submitbtn.style.color = "#fff";
+  submitbtn.style.fontSize = "14px";
+  submitbtn.style.fontWeight = "700";
+  submitbtn.style.marginTop = "10px";
+  submitbtn.style.height = "44px";
+  submitbtn.style.width = "calc(50% - 12px)";
+  submitbtn.style.minWidth = "120px";
+  submitbtn.style.cursor = "pointer";
+  submitbtn.style.marginRight = "10px";
+
+  const inputField3 = document.createElement("input");
+  inputField3.type = "text";
+  inputField3.placeholder = "Enter Email:";
+  inputField3.style.padding = "12px 13px";
+  inputField3.style.borderRadius = "8px 8px 8px 0px";
+  inputField3.style.border = "1px solid rgba(255, 255, 255, 0.10)";
+  inputField3.style.background = "#25222b";
+  inputField3.style.color = "#fff";
+  inputField3.style.fontSize = "14px";
+  inputField3.style.fontWeight = "400";
+  inputField3.style.marginBottom = "10px";
+  inputField3.style.outline = "none";
+  chatInput.focus();
+  // Set border color when the input is in focus
+  inputField1.addEventListener("focus", function () {
+    inputField1.style.border = "1px solid #0F9AD7";
+  });
+  inputField1.addEventListener("blur", function () {
+    inputField1.style.border = "1px solid rgba(255, 255, 255, 0.10)";
+  });
+
+  const inputField4 = document.createElement("textarea");
+  inputField4.type = "text";
+  inputField4.placeholder = "Enter Your Query:";
+  inputField4.style.padding = "12px 13px";
+  inputField4.style.borderRadius = "8px 8px 8px 0px";
+  inputField4.style.border = "1px solid rgba(255, 255, 255, 0.10)";
+  inputField4.style.background = "#25222b";
+  inputField4.style.color = "#fff";
+  inputField4.style.fontSize = "14px";
+  inputField4.style.fontWeight = "400";
+  inputField4.style.marginBottom = "10px";
+  inputField4.style.outline = "none";
+  inputField4.style.resize = "none";
+
+  // Set border color when the input is in focus
+  inputField2.addEventListener("focus", function () {
+    inputField2.style.border = "1px solid #0F9AD7";
+  });
+  inputField2.addEventListener("blur", function () {
+    inputField2.style.border = "1px solid rgba(255, 255, 255, 0.10)";
+  });
 
   //Send Button Further Actions
 
@@ -808,7 +961,8 @@ function addInputFields() {
   sendButtonAfter.style.padding = "12px 13px";
   sendButtonAfter.style.borderRadius = "9px 9px 9px 0px";
   sendButtonAfter.style.border = "0";
-  sendButtonAfter.style.background = "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
+  sendButtonAfter.style.background =
+    "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
   sendButtonAfter.style.color = "#fff";
   sendButtonAfter.style.fontSize = "14px";
   sendButtonAfter.style.fontWeight = "700";
@@ -819,14 +973,14 @@ function addInputFields() {
   sendButtonAfter.style.cursor = "pointer";
   sendButtonAfter.style.marginRight = "10px";
 
-
   const endButtonAfter = document.createElement("button");
   endButtonAfter.textContent = "End Chat";
   endButtonAfter.style.padding = "12px 13px";
   endButtonAfter.style.borderRadius = "9px";
   endButtonAfter.style.border = "1px solid rgba(213, 65, 69, 0.70)";
   endButtonAfter.style.background = "rgba(213, 65, 69, 0.15)";
-  endButtonAfter.style.boxShadow = "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
+  endButtonAfter.style.boxShadow =
+    "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
   endButtonAfter.style.color = "#fff";
   endButtonAfter.style.fontSize = "14px";
   endButtonAfter.style.fontWeight = "700";
@@ -838,32 +992,28 @@ function addInputFields() {
 
   endButtonAfter.addEventListener("click", async function () {
     // Handle the data from the input fields and send a request if needed
-    // addMessage(
-    //   "Please share your feedback with us.",
-    //   false
-    // );
-    smileFun()
+    addMessage("Please share your feedback with us.", false);
+    smileFun();
     updateMessageContainer();
   });
   const afterButtonsContainer = document.createElement("div");
   afterButtonsContainer.style.display = "flex";
   afterButtonsContainer.style.alignItems = "center";
 
-  afterButtonsContainer.appendChild(sendButtonAfter)
-  afterButtonsContainer.appendChild(endButtonAfter)
+  afterButtonsContainer.appendChild(sendButtonAfter);
+  afterButtonsContainer.appendChild(endButtonAfter);
 
   function reactionContainersOuterFun() {
     messageContainer.appendChild(afterButtonsContainer);
   }
-
-
 
   const sendButton = document.createElement("button");
   sendButton.textContent = "Submit";
   sendButton.style.padding = "12px 13px";
   sendButton.style.borderRadius = "9px 9px 9px 0px";
   sendButton.style.border = "0";
-  sendButton.style.background = "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
+  sendButton.style.background =
+    "linear-gradient(280deg, #61CDF9 -15.99%, #3147AF 100.2%)";
   sendButton.style.color = "#fff";
   sendButton.style.fontSize = "14px";
   sendButton.style.fontWeight = "700";
@@ -874,12 +1024,11 @@ function addInputFields() {
   sendButton.style.cursor = "pointer";
   sendButton.style.marginRight = "10px";
 
-
+  //raise q query/
   sendButton.addEventListener("click", async function () {
     // Handle the data from the input fields and send a request if needed
     const input1Value = inputField1.value;
     const input2Value = inputField2.value;
-    console.log(input1Value, 'lllllllllllll', input2Value);
     try {
       const response = await fetch(
         "https://chat-service.antiers.world/chatBot/ticket/saveDetails",
@@ -888,62 +1037,37 @@ function addInputFields() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            'cache-control': 'no-cache',
-            'pragma': 'no-cache',
-            "x-auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpbmdhcmluZ2FAZ21haWwuY29tIiwiZG9tYWluIjoicmluZ2FyaW5nYSIsImlhdCI6MTcwMzc2MDA3OCwiZXhwIjoxNzAzODQ2NDc4fQ.17ciqIQgdpepeUlNjuY2pyAKEU3whr8n9PojNfYz5c4",
+            "cache-control": "no-cache",
+            pragma: "no-cache",
+            "x-auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55Ijoic2hpZG8iLCJkb21haW4iOiI6OmZmZmY6MTAuNDIuMTUwLjEyOCIsImVudGVycHJpc2UiOiJibG9ja2NoYWluIiwidGFyZ2V0TGFuZ3VhZ2UiOiJlbmdsaXNoIiwiaWF0IjoxNzA2MTEyNjkyLCJleHAiOjE3MDY3MTc0OTJ9.RIc7gKmWCZVW7K05C25nafj2dddoP840vgR46aYknOE",
           },
           body: JSON.stringify({
-            "subject": "blockchain 3000.0",
-            "assigner": "Master 11.0",
-            "assignee": "employee 11.0",
-            "status": "InProgress",
-            "response": "null",
-            "user": {
-              "username": input1Value,
-              "email": input1Value,
-              "contactno": "7001600248",
-              "company": "172.100.0.0",
-            },
-
-            "query": input2Value
+            userEmail: input1Value,
+            query: input2Value,
           }),
         }
       );
-      console.log(response, "===respponse===");
       if (response?.ok) {
         const data = await response.json();
-        console.log(data, "dataaaaaa", data?.message)
         // addMessage(
         //   data?.message,
         //   false
         // );
-        addMessage(
-          'Will get back to you soon',
-          false
-        );
+        addMessage("Will get back to you soon", false);
         // reactionContainersOuterFun()
         // updateMessageContainer();
-
-
 
         // // Clear the input fields
         inputField1.value = "";
         inputField2.value = "";
-        addEndChatButton()
+        addEndChatButton();
       } else {
-        console.error("Failed to fetch the answer from the API");
-
       }
-    } catch (error) {
-      console.error("Error:", error);
-
-    }
-
+    } catch (error) { }
   });
 
-
-
-
+  ///raise a query end//
   // Append the Emojies button to the document
 
   const endButton = document.createElement("button");
@@ -952,7 +1076,8 @@ function addInputFields() {
   endButton.style.borderRadius = "9px";
   endButton.style.border = "1px solid rgba(213, 65, 69, 0.70)";
   endButton.style.background = "rgba(213, 65, 69, 0.15)";
-  endButton.style.boxShadow = "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
+  endButton.style.boxShadow =
+    "0px 8.255px 20.636px 0px rgba(213, 65, 69, 0.30)";
   endButton.style.color = "#fff";
   endButton.style.fontSize = "14px";
   endButton.style.fontWeight = "700";
@@ -968,12 +1093,9 @@ function addInputFields() {
     //   "Please share your feedback with us.",
     //   false
     // );
-    smileFun()
+    smileFun();
     updateMessageContainer();
   });
-
-
-
 
   const inputContainer = document.createElement("div");
   inputContainer.appendChild(inputField1);
