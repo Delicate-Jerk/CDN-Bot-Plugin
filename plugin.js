@@ -280,7 +280,7 @@ bubbleContainer.style.flexFlow = "wrap";
 bubbleContainer.style.gap = "10px";
 
 var numberOfTimes = 6;
-var names = ["Raise a Query", "How to become a Validator", "Security at Shido", "Shido Bridge", "Shido Coins"];
+var names = ["Raise a Query", "How to become a Validator", "Security at Shido", "RINGGGG", "Shido Coins"];
 
 function updateMessageContainer(content) {
   const clickedElement = document.createElement("div");
