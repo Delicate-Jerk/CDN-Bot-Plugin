@@ -719,7 +719,7 @@ document
             // "enterprise": "company",
             // "folder_name": "shido",
             // "target_language": "english"
-            assistant_id: "asst_blyftiXHtKfpDMHQ24txuoGh",
+            assistant_id: "asst_3sXV2NC5j9CLyK34C5slOx2H",
             instructions:
               "You are a chat assistant for Shido which is a Blockchain company, and your dataset would be the file uploaded, provide me with answers as quickly as possible and in english language, and only answer questions related to shido or blockchain and not answer anything else other than these",
           }),
